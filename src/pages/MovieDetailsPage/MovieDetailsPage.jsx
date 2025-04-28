@@ -1,18 +1,45 @@
+import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
 import backIcon from "../../assets/back.svg";
 import styles from "./MovieDetailsPage.module.css";
+
+const API_KEY = "6625483e955431663bda79344d4beaf2";
+const BASE_URL = "https://api.themoviedb.org/3";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Запам'ятати, звідки користувач прийшов
+  const [movie, setMovie] = useState(null);
+
   const backLink = location.state?.from ?? "/";
+
+  useEffect(() => {
+    async function fetchMovieDetails() {
+      try {
+        const response = await fetch(
+          `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
+        );
+        const data = await response.json();
+        setMovie(data);
+      } catch (error) {
+        console.error("Помилка при завантаженні деталей фільму:", error);
+      }
+    }
+
+    fetchMovieDetails();
+  }, [movieId]);
 
   const handleGoBack = () => {
     navigate(backLink);
   };
+
+  if (!movie) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
@@ -28,8 +55,37 @@ export default function MovieDetailsPage() {
         />
         Back
       </button>
-      <h1 className={styles["head"]}>Movie Details</h1>
-      <p>Movie ID: {movieId}</p>
+
+      <div className={styles.movieDetails}>
+        {movie.poster_path && (
+          <img
+            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+            alt={movie.title}
+          />
+        )}
+        <div className={styles.movieInfo}>
+          <h1>{movie.title}</h1>
+          <p>User score: {Math.round(movie.vote_average * 10)}%</p>
+          <h2>Overview</h2>
+          <p>{movie.overview}</p>
+          <h2>Genres</h2>
+          <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
+        </div>
+      </div>
+      <hr />
+      <Outlet />
+      <div className={styles.additionalInfo}>
+        <h2>Additional information</h2>
+        <ul>
+          <li className={styles.item}>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </div>
+      <hr />
     </>
   );
 }

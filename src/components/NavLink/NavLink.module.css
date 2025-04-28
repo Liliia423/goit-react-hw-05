@@ -7,13 +7,11 @@
   transition: color 0.3s, border-bottom 0.3s;
 }
 
-/* Hover */
 .navlink:hover {
-  color: rgb(85, 85, 255); /* синій при наведенні */
+  color: rgb(85, 85, 255);
 }
 
-/* Активний стан */
 .active {
-  color: rgb(255, 99, 71); /* помаранчево-червоний */
+  color: rgb(255, 99, 71);
   border-bottom: 4px solid rgb(255, 99, 71);
 }

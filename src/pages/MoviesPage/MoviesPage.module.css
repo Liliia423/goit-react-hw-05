@@ -60,32 +60,29 @@ button:active {
 }
 
 .inputWrapper {
-  position: relative; /* Тепер хрестик буде всередині */
+  position: relative;
   margin-right: 16px;
 }
 
 .search-field-input {
-  padding-right: 40px; /* Зарезервувати місце для хрестика всередині input */
+  padding-right: 40px;
   padding: 10px;
-
   box-sizing: border-box;
 }
 
-/* Оболонка для хрестика */
 .clearWrapper {
   position: absolute;
   top: 50%;
-  right: 12px; /* Відстань від правого краю інпута */
+  right: 12px;
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* важливо: не блокує кліки по інпуту */
+  pointer-events: none;
 }
 
-/* Кнопка хрестика */
 .clearBtn {
   background: none;
   border: none;
@@ -94,5 +91,5 @@ button:active {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  pointer-events: all; /* активує кліки тільки на кнопку */
+  pointer-events: all;
 }
