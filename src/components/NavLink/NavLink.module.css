@@ -1,0 +1,19 @@
+.navlink {
+  color: rgb(36, 35, 35);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  padding-bottom: 4px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Hover */
+.navlink:hover {
+  color: rgb(85, 85, 255); /* синій при наведенні */
+}
+
+/* Активний стан */
+.active {
+  color: rgb(255, 99, 71); /* помаранчево-червоний */
+  border-bottom: 4px solid rgb(255, 99, 71);
+}

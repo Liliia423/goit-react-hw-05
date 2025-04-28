@@ -1,0 +1,18 @@
+.navmenu {
+  width: 100vw;
+  display: flex;
+  gap: 16px;
+  min-height: 40px;
+  padding: 16px 24px;
+  margin-bottom: 36px;
+  background-color: rgb(225, 240, 126);
+  font-size: 20px;
+  border-bottom: solid 1px rgb(31, 31, 31);
+}
+
+a:-webkit-any-link {
+  color: rgb(36, 35, 35);
+  cursor: pointer;
+  text-decoration: inherit;
+  letter-spacing: 2px;
+}
