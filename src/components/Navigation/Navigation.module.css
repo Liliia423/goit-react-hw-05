@@ -1,11 +1,11 @@
 .navmenu {
   width: 100vw;
-  max-width: 1280px;
+
   display: flex;
   gap: 16px;
   min-height: 40px;
   padding: 30px 24px 16px 24px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   background-color: rgb(225, 240, 126);
   font-size: 20px;
   border-bottom: solid 1px rgb(31, 31, 31);

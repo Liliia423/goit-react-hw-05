@@ -59,7 +59,7 @@ export default function MovieDetailsPage() {
       <div className={styles.movieDetails}>
         {movie.poster_path && (
           <img
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
           />
         )}
@@ -73,7 +73,6 @@ export default function MovieDetailsPage() {
         </div>
       </div>
       <hr />
-      <Outlet />
       <div className={styles.additionalInfo}>
         <h2>Additional information</h2>
         <ul>
@@ -86,6 +85,7 @@ export default function MovieDetailsPage() {
         </ul>
       </div>
       <hr />
+      <Outlet />
     </>
   );
 }
