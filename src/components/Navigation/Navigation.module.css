@@ -1,5 +1,6 @@
 .navmenu {
   width: 100vw;
+  max-width: 1280px;
   display: flex;
   gap: 16px;
   min-height: 40px;
