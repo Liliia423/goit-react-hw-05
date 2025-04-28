@@ -1,9 +1,22 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
+import { lazy, Suspense } from "react";
+{
+  /*import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import MovieCast from "../src/components/MovieCast/MovieCast";
-import MovieReviews from "../src/components/MovieReviews/MovieReviews";
+import MovieReviews from "../src/components/MovieReviews/MovieReviews";*/
+}
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
+const MovieDetailsPage = lazy(() =>
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
+);
+const MovieCast = lazy(() => import("../src/components/MovieCast/MovieCast"));
+const MovieReviews = lazy(() =>
+  import("../src/components/MovieReviews/MovieReviews")
+);
 
 {
   /*import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";*/

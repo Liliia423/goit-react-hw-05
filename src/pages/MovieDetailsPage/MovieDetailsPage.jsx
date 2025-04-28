@@ -15,7 +15,7 @@ export default function MovieDetailsPage() {
 
   const [movie, setMovie] = useState(null);
 
-  const backLink = location.state?.from ?? "/";
+  const backLink = location.state?.from ?? "/movies";
 
   useEffect(() => {
     async function fetchMovieDetails() {
@@ -53,7 +53,7 @@ export default function MovieDetailsPage() {
           alt="Back"
           style={{ width: "16px", height: "16px", marginRight: "8px" }}
         />
-        Back
+        Go back
       </button>
 
       <div className={styles.movieDetails}>
