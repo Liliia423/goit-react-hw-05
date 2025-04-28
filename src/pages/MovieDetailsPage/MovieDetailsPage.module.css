@@ -20,11 +20,10 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
   cursor: pointer;
-  padding: 6px 32px;
-
-  color: #fffffd;
+  padding: 2px 60px;
+  color: #e8f80e;
   text-align: center;
   font-size: 18px;
   font-style: normal;

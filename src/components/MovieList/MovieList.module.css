@@ -1,4 +1,14 @@
-li:hover {
+.item:hover {
   text-decoration: underline;
+  color: rgb(221, 221, 232);
+}
+
+.item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.item a:hover {
   color: blue;
+  text-decoration: underline;
 }

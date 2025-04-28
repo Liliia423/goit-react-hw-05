@@ -1,28 +1,3 @@
-{
-  /*import { useParams } from "react-router-dom";
-import backIcon from "../../assets/back.svg";
-import styles from "./MovieDetailsPage.module.css";
-
-export default function MovieDetailsPage() {
-  const { movieId } = useParams();
-
-  return (
-    <>
-      <button className={styles["button-fot-search-field"]} type="button">
-        <img
-          src={backIcon}
-          alt="Back"
-          style={{ width: "16px", height: "16px", marginRight: "8px" }}
-        />
-        Back
-      </button>
-      <h1 className={styles["head"]}>Movie Details</h1>
-      <p>Movie ID: {movieId}</p>
-    </>
-  );
-}*/
-}
-
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import backIcon from "../../assets/back.svg";
 import styles from "./MovieDetailsPage.module.css";
